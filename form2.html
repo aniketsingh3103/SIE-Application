@@ -1,0 +1,273 @@
+
+<html>
+<head>
+	<title>STATE INSTITUTE OF EDUCATION</title>
+	<link href="style/style.css" rel="stylesheet" type="text/css" media="all">
+    
+    <script>
+
+var form1=new Array("school_name","add_no",
+                    "dob_add","name_brc","no_sibling",
+                    "card_no","source",
+                    "f_occ","aids","details_aids",
+                    "dob_validity","father_in");
+
+
+var dob=new Array("date","month","year");
+var dob1=new Array("date1","month1","year1");
+function validate(form){
+var count=validateForm(form);	
+if(count<1){
+    alert("Form is Valid");
+   return true;
+}else{
+ var div=document.getElementById('error');
+ var a=document.getElementById(form1[count-1]);
+ a.style.backgroundColor="#0277BD";
+    a.style.color="#fff";
+    a.focus();
+    if((count==5)||(count==12)){
+        div.style.visibility="visible";
+        div.innerHTML="THIS FEILD TAKES ONLY NUMBER";
+    }
+    return false;
+}
+};
+
+</script>
+
+    
+</head>
+<body onload="next()">
+	<div class="top"><div class="logo"><img src="images/logo.png"/></div><div class="lable"><div class="up">Directorat Of Education Andaman And Nicobar</div>State  Institute  Of  Education</div></div>
+    <div class="menu"><div class="nav">
+        <ul>
+            <li ><a href="index.php">Home</a></li>
+            <li ><a href="report.html">Report</a></li> 
+            <li ><a href="student.html">Students</a></li>
+            <li ><a href="about.html">About</a></li>
+                    </ul></div></div>
+	<div class="main_head"><div class="head"><div class="in_head" id="in_1"><a href="form1.html">PERSONAL INFORMATION</a></div><div class="in_head" id="in_2">BASIC INFORMATION</div><div class="in_head" id="in_3"><a href="form3.html">BANK INFORMATION</a></div></div></div>
+<br>
+
+
+
+<div class="contain">
+<form action="php/check2.php" method="POST" onSubmit="return validate(this)">
+<div class="form_div" id="form2">
+		<div class="div1">
+		Name of school<input type="text" name="school_name" id="school_name"/><br><br>
+		Adimission NO<input type="text" name="add_no" id="add_no" /><br><br>
+		
+ Date of Admission<div class="select_date" id="dob_add"> 
+       Date<select name="date" size="1" id="date">
+    <option value='1'>1</option>
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+    <option value='7'>7</option>
+    <option value='8'>8</option>
+    <option value='9'>9</option>
+    <option value='10'>10</option>
+    <option value='11'>11</option>
+    <option value='12'>12</option>
+    <option value='13'>13</option>
+    <option value='14'>14</option>
+    <option value='15'>15</option>
+    <option value='16'>16</option>
+    <option value='17'>17</option>
+    <option value='18'>18</option>
+    <option value='19'>19</option>
+    <option value='20'>20</option>
+    <option value='21'>21</option>
+    <option value='22'>22</option>
+    <option value='23'>23</option>
+    <option value='24'>24</option>
+    <option value='25'>25</option>
+    <option value='26'>26</option>
+    <option value='27'>27</option>
+    <option value='28'>28</option>
+    <option value='29'>29</option>
+    <option value='30'>30</option>
+    <option value='31'>31</option>
+</select>
+Month<select name="month" size="1" id="month">
+<option value="1">january</option>
+<option value="2">feburary</option>
+<option value="3">march</option>
+<option value="4">april</option>
+<option value="5">may</option>
+    <option value="6">june</option>
+    <option value="7">july</option>
+    <option value="8">august</option>
+    <option value="9">september</option>
+    <option value="10">october</option>
+    <option value="11">november</option>
+    <option value="12">december</option>
+</select>
+Year<input type="tel" name="year" id="year" style="width:70px;margin-left:10px;float:none;" maxlength="4"/>
+       
+   
+<input type="hidden" name="dob_add" id="dob2" value=""/> </div><br><br>
+		Card NO<input type="text" name="card_no" id="card_no"/><br><br>
+		
+		Source<div class="radio" id="source" style="height:70px"> 
+			SSA<input type="radio" class="rad" name="source" id="source"value="ssa"/>
+			RMSA<input type="radio" class="rad" name="source" id="source" value="rmsa"/>
+			SIE<input type="radio" class="rad" name="source" id="source" value="sie"/><br>
+			DSW<input type="radio" class="rad" name="source" id="source" value="dsw"/>
+			NGO<input type="radio" class="rad" name="source" id="source" value="ngo"/>
+			OTHERS<input type="radio" class="rad" name="source" id="source" value="others"/></div><br><br></br></br>
+	</div>
+
+	<div id="div2" class="div2">
+		Father's Occupation<input type="text" name="f_occ" id="f_occ"/><br><br>
+		Name of BRC<input type="text" name="name_brc" id="name_brc"/><br><br>
+		NO. of Siblings<input type="text" name="no_sibling" id="no_sibling" maxlength="1"/><br><br>
+		AIDS and Appliance Received<div class="radio" id="aids"> 
+			YES<input type="radio" class="rad" name="aids" id="aids" value="no"/>	
+			NO<input type="radio" class="rad" name="aids" id="aids" value="yes"/></div><br><br>
+			
+		Details of AIDS Received<input type="text" name="details_aids" id="details_aids"/><br><br>
+		
+ Validity Date<div class="select_date" id="dob_validity"> 
+       Date<select name="date" size="1" id="date1">
+    <option value='1'>1</option>
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+    <option value='7'>7</option>
+    <option value='8'>8</option>
+    <option value='9'>9</option>
+    <option value='10'>10</option>
+    <option value='11'>11</option>
+    <option value='12'>12</option>
+    <option value='13'>13</option>
+    <option value='14'>14</option>
+    <option value='15'>15</option>
+    <option value='16'>16</option>
+    <option value='17'>17</option>
+    <option value='18'>18</option>
+    <option value='19'>19</option>
+    <option value='20'>20</option>
+    <option value='21'>21</option>
+    <option value='22'>22</option>
+    <option value='23'>23</option>
+    <option value='24'>24</option>
+    <option value='25'>25</option>
+    <option value='26'>26</option>
+    <option value='27'>27</option>
+    <option value='28'>28</option>
+    <option value='29'>29</option>
+    <option value='30'>30</option>
+    <option value='31'>31</option>
+</select>
+Month<select name="month" size="1" id="month1">
+<option value="1">january</option>
+<option value="2">feburary</option>
+<option value="3">march</option>
+<option value="4">april</option>
+<option value="5">may</option>
+    <option value="6">june</option>
+    <option value="7">july</option>
+    <option value="8">august</option>
+    <option value="9">september</option>
+    <option value="10">october</option>
+    <option value="11">november</option>
+    <option value="12">december</option>
+</select>
+Year<input type="tel" name="year" id="year1" style="width:70px;margin-left:10px;float:none;"
+            maxlength="4"/></br>
+       
+   
+<input type="hidden" name="dob_validity" id="dob3" value=""/> </div><br><br>
+		Father Income<input type="text" name="father_in" id="father_in"/><br><br>
+		
+	</div>
+</div>
+<button class="next" name="next">NEXT</button>
+</form>
+</div>
+<div class="error" id="error"></div>
+<script type="text/javascript">
+var tab2=document.getElementById('in_2');
+tab2.className="in_head_change";
+    var next=function(){
+    tab2.className="in_head_change";
+      };
+    
+    function validateForm(form) {
+        var count=0;
+        for(var i=0;i<form1.length;i++){
+        var a=document.getElementById(form1[i]).value;
+            if(a==""){
+                count=i+1;
+                break;
+            }if((i==4)||(i==11)){
+             if(isNaN(a)){count=i+1;}   
+            }
+
+        }
+
+        var date1=document.getElementById("dob2");
+        var date2=document.getElementById("dob3");
+        var string="";
+        var string1="";
+        for(var i=0;i<dob.length;i++){
+          var d=document.getElementById(dob[i]).value;
+          if(d==""){
+                count=3;
+                break;
+            }if(i==2){
+             if(isNaN(d)){count=3;}   
+            }
+          if(i<2){
+            string=string+d+"-";}else{string=string+d;}
+    }
+              date1.value=string;
+
+              for(var i=0;i<dob1.length;i++){
+          var d=document.getElementById(dob1[i]).value;
+          if(d==""){
+                count=11;
+                break;
+            }if(i==2){
+             if(isNaN(d)){count=11;}   
+            }
+          if(i<2){
+            string1=string1+d+"-";}else{string1=string1+d;}
+    }
+    date2.value=string1;
+
+
+        if(count<1){
+        count=radiovalidate(form);
+    }
+           return count;     };
+
+           function radiovalidate(form){
+           
+               
+           if((form.source[0].checked ==false)&&(form.source[1].checked ==false)&&(form.source[2].checked ==false)&&(form.source[3].checked ==false)&&(form.source[4].checked ==false)&&(form.source[5].checked ==false))	{
+	return 7;
+}
+           		else{
+
+           		if((form.aids[0].checked ==false)&&(form.aids[1].checked ==false)){
+           			return 9;	}
+           			}
+   return 0;
+       };
+    
+    
+    
+   </script> 
+
+</body>
+</html>

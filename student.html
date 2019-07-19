@@ -1,0 +1,167 @@
+<html>
+<head>
+    <title>STATE INSTITUTE OF EDUCATION</title>
+	<link href="style/style.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" href="stylesheet-image-based.css">
+    <style type="text/css">
+    
+        h3{
+            text-align: center;
+        }
+        .wise{
+            width: 1000px;
+            height: auto;
+            margin: auto;
+            font-size: 18px;
+            color: #fff;
+            
+           
+            
+        }
+       
+        .wise li{
+        display: inline-table;
+         margin:10px;   
+        background-color:#e63e0d;
+            cursor: pointer;
+            border-radius: 6px;
+            padding: 5px;
+            text-align: center;
+            list-style: none;
+            width: 200px;
+            height: 100px;
+            box-shadow: 3px 3px 3px #bbb;
+        }
+        
+        .wise li p{
+            margin: 3px;
+            padding: 3px;
+            background-color: rgba(0, 0, 0, .6);
+            text-align: center;
+            font-size: 16px;
+            
+        }
+        .put{
+            
+         width: 200px;
+            margin: auto;
+        }
+        input{
+            float: none;
+            color: #123456;
+            text-align: center;
+            font-size: 16px;
+        }
+        .float{
+            width: 300px;
+            position: absolute;
+            top: 45%;
+            left: 40%;
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, .6);
+            visibility: hidden;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        
+        
+      
+
+
+
+
+
+
+    
+    </style>
+    </head>
+<body>
+    <div class="top"><div class="logo"><img src="images/logo.png"/></div><div class="lable"><div class="up">Directorat Of Education Andaman And Nicobar</div>State  Institute  Of  Education</div></div>
+    <div class="menu"><div class="nav">
+        <ul>
+            <li ><a href="index.php">Home</a></li>
+            <li ><a href="report.html">Report</a></li> 
+            <li ><a href="student.html">Students</a></li>
+            <li ><a href="about.html">About</a></li>
+        </ul></div></div>
+   
+<h3>GET STUDENTS OPTION WISE</h3>
+    
+    <div class="wise">
+    <ul>
+        <li onclick="send('8','1')"><p>ID wise</p></li>
+        <li onclick="send('1','1')"><p>Distric wise</p></li>
+            <li onclick="send('2','2')"><p>BRC wise</p></li> 
+            <li onclick="send('3','2')"><p>School wise</p></li>
+            <li onclick="send('4','1')"><p>Disability wise</p></li>
+            <li onclick="send('5','1')"><p>Disability percent wise</p></li>
+            <li onclick="send('6','1')"><p>Gender wise</p></li>
+            <li onclick="send('7','1')"><p>class wise</p></li>
+        
+        
+        </ul>
+        
+        
+      
+    
+</div>
+    
+    <div class="float" id="float">
+  
+    <input id="a2" type="text"  placeholder="Enter the feild" /></br></br>
+    <input id="a1" type="hidden" value=""/>
+    <input id="b1" type="hidden" value=""/>
+        
+           <button class="next" onclick="push()">Display</button></br></br>
+        <button  class="next" onclick="send('10')">Cancle</button>
+   
+    </div>
+   
+    
+    
+ <script type="text/javascript">
+    
+     
+     
+    var send=function(a,b){
+        var box=document.getElementById("float"); 
+        var a1=document.getElementById("a1");
+        var b1=document.getElementById("b1");
+        a1.value=a;
+        b1.value=b;
+        if(a==10){
+        box.style.visibility="hidden";
+        }else{
+        box.style.visibility="visible";
+        }
+        
+        
+    };
+     
+        var push=function(){
+        var a1=document.getElementById("a1");
+         var a2=document.getElementById("a2");
+        var b1=document.getElementById("b1");
+         
+            if(a1.value==8){
+             location.href="php/display.php?id="+a2.value;   
+            }else{
+         
+                location.href="php/student.php?a="+a1.value+"&b="+a2.value+"&c="+b1.value;
+            }
+     };
+     
+     var close=function(){
+      var box=document.getElementById("float");  
+         box.style.visibility="hidden";
+         };
+    
+    </script>   
+    
+</body>
+
+
+
+</html>

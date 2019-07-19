@@ -1,0 +1,204 @@
+<html>
+<head>
+	<title>STATE INSTITUTE OF EDUCATION</title>
+	<link href="style/style.css" rel="stylesheet" type="text/css" media="all">
+    <style type="text/css">
+    select{
+        appearance: none;   
+        -webkit-appearance: none;
+        font-family: sans-serif;
+        font-size: 16px;
+        text-transform: capitalize;
+        color: #123;
+        border-radius: 3px;
+        height: 30px;
+        border: 1px solid orange;
+        }
+        
+       
+        
+    
+    
+    
+    </style>
+    <script>
+
+var form1=new Array("f_a","acc_no",
+                    "bank_name","branch_name",
+                    "aadhar_no","contact",
+                    "birth_c","milestone",
+                    "name_psrt","birth_order","age_pregnancy",
+                    "birth_m","birth_w");
+
+
+
+function validate(form){
+var count=validateForm(form);	
+if(count<1){
+    alert("true");
+   return true;
+}else{
+
+ var a=document.getElementById(form1[count-1]);
+    var div=document.getElementById('error');
+ a.style.backgroundColor="#0277BD";
+    a.style.color="#fff";
+    a.focus();
+    if((count==6)||(count==11)){
+        div.style.visibility="visible";
+    	div.innerHTML="THIS FEILD TAKES ONLY NUMBER";
+    }
+    return false;
+}
+};
+
+</script>
+    
+</head>
+<body onload="next()">
+	<div class="top"><div class="logo"><img src="images/logo.png"/></div><div class="lable"><div class="up">Directorat Of Education Andaman And Nicobar</div>State  Institute  Of  Education</div></div>
+    <div class="menu"><div class="nav">
+        <ul>
+            <li ><a href="index.php">Home</a></li>
+            <li ><a href="report.html">Report</a></li> 
+            <li ><a href="student.html">Students</a></li>
+            <li ><a href="about.html">About</a></li>
+                    </ul></div></div>
+	<div class="main_head"><div class="head"><div class="in_head" id="in_1"><a href="form1.html">PERSONAL INFORMATION</a></div><div class="in_head" id="in_2"><a href="form2.html">BASIC INFORMATION</a></div><div class="in_head" id="in_3">BANK INFORMATION</div></div></div>
+<br>
+<div class="contain">
+    <form action="php/check3.php" method="POST" onSubmit="return validate(this)" enctype="multipart/form-data">
+<div class="form_div" id="form3">
+		Financial Assistance Received<div class="radio" id="f_a" style="height:75px; width: 850px"> 
+      TRANSPORT ALLOWANCE<input type="checkbox" class="rad" name="f_a[]" id="f_a" value="t_a"/>
+      ESCORT<input type="checkbox" class="rad" name="f_a[]" id="f_a" value="escort"/>
+      BOOL ALLOWED<input type="checkbox" class="rad" name="f_a[]" id="f_a" value="b_a"/>
+      READER ALL<input type="checkbox" class="rad" name="f_a[]" id="f_a" value="reader_all"/>
+      UNIFORM ALLOWANCE<input type="checkbox" class="rad" name="f_a[]" id="f_a" value="u_a"/><br>
+      DISABILITY ALLOWANCE<input type="checkbox" class="rad" name="f_a[]" id="f_a" value="d_a"/>
+      OTHERS<input type="checkbox" class="rad" name="f_a[]" id="f_a" value="others"/></div><br><br></br></br><BR>
+       
+		
+    <div class="div1">
+
+	Bank Account NO<input type="text" name="acc_no" id="acc_no"/><br><br>
+		Name of Bank<input type="text" name="bank_name" id="bank_name" /><br><br>
+		Name of Branch<input type="text" name="branch_name" id="branch_name"/><br><br>
+		
+		Contact NO<input type="text" name="contact" id="contact" maxlength="10"/><br><br>
+		Birth Cry<div class="radio" id="birth_c"> 
+			NORMAL<input type="radio" class="rad" name="birth_c" id="birth_c" value="normal"/>	
+			DELAYED<input type="radio" class="rad" name="birth_c" id="birth_c" value="delayed"/></div><br><br>
+
+			Development Milestone<div class="radio" id="milestone"> 
+			NORMAL<input type="radio" class="rad" name="milestone" id="milestone" value="normal"/>	
+			DELAYED<input type="radio" class="rad" name="milestone" id="milestone" value="delayed"/></div><br><br>
+	
+		</div>
+	
+
+	<div class="div2">
+		Name of PSRT attending<select style="width:250px;float:right;margin-right:20px" id="name_psrt" name="name_psrt">
+        <option value="">--select--</option>
+    <option value="smti.minoti bairagi">smti.minoti bairagi</option>
+    <option value="shri.robindu biswas">shri.robindu biswas</option>
+        <option value="shri.abdul majeed">shri.abdul majeed</option>
+        <option value="shri.nikhil kritinia">shri.nikhil kritinia</option>
+        <option value="smti.fatima bibi">smti.fatima bibi</option>
+        <option value="smti.rita">smti.rita</option>    
+        <option value="shri.mohamed salim">shri.mohamed salim</option>
+        <option value="shri.ratna mondal">shri.ratna mondal</option>
+        <option value="smti.c.rajeshwari">smti.c.rajeshwari</option>
+        <option value="smti.sheela cherian">smti.sheela cherian</option>
+        <option value="smti.kanchan mondal">smti.kanchan mondal</option>
+        <option value="smti.suchitra bairagi">smti.suchitra bairagi</option>
+        <option value="shri.rajan kumar biswas">shri.rajan kumar biswas</option>
+        <option value="smti.sarita devi">smti.sarita devi</option>
+        <option value="smti.kusum ghosh">smti.kusum ghosh</option>
+        <option value="smti.vijay kumari">smti.vijay kumari</option>
+        <option value="shri.johnmilton">shri.johnmilton</option>
+        <option value="smti.lidiya">smti.lidiya</option>
+        <option value="shri.ashim kumar mondal">shri.ashim kumar mondal</option>
+        <option value="smti.sheeba theophilus">smti.sheeba theophilus</option>
+        <option value="smti.elezbeth">smti.elezbeth</option>
+</select><br><br>
+		Aadhar NO<input type="text" name="aadhar_no" id="aadhar_no" maxlength="12"/><br><br>
+		Birth order of CWSN<input type="text" name="birth_order" id="birth_order" maxlength="1"/><br><br>
+		Age of Mother At Pregnancy<input type="text" name="age_pregnancy" id="age_pregnancy" maxlength="2"/><br><br>
+		Birth Maturity<div class="radio" id="birth_m"> 
+			MATURED<input type="radio" class="rad" name="birth_m" id="birth_m" value="matured"/>	
+			PREMATURED<input type="radio" class="rad" name="birth_m" id="birth_m" value="prematured"/></div><br><br>
+		Birth Weight<div class="radio" id="birth_w"> 
+			NORMAL<input type="radio" class="rad" name="birth_w" id="birth_w"value="normal"/>	
+			UNDER WEIGTH<input type="radio" class="rad" name="birth_w" id="birth_w" value="underweight"/></div><br><br>
+
+		
+		
+	</div>
+	</div>
+    <button class="next" id="next1" >SUBMIT</button>
+    </form>
+</div>
+<div class="error" id="error"></div>
+
+<script type="text/javascript">
+var tab3=document.getElementById('in_3');
+
+    var next=function(){
+     
+      	tab3.className="in_head_change";
+};
+    
+    function validateForm(form) {
+        var count=0;
+        for(var i=0;i<form1.length;i++){
+        var a=document.getElementById(form1[i]).value;
+            if(a==""){
+                count=i+1;
+                break;
+            }
+            if((i==5)||(i==10)||(i==4)||(i==9)){
+                if(isNaN(a)){count=i+1;}
+            }
+        }
+        if(count<1){
+        count=radiovalidate(form);
+    }
+           return count;     };
+    
+
+           function radiovalidate(form){
+               var check=0;
+          for(var i=0;i<form.f_a.length;i++){
+           	if(form.f_a[i].checked ==true){
+                check=1;
+           		break;	}
+          }
+               if(check==0){
+                   return 1;}
+               else{
+           		if((form.birth_c[0].checked==false)&&(form.birth_c[1].checked==false)){
+           			return 7;	}
+           			else{
+           		if((form.milestone[0].checked==false)&&(form.milestone[1].checked==false)){
+           				return 8;	}
+           						else{
+					if((form.birth_m[0].checked==false)&&(form.birth_m[1].checked==false)){
+           					return 12;	}
+           				else{
+                if((form.birth_w[0].checked==false)&&(form.birth_w[1].checked==false))	{
+	                       return 13;
+}
+           				}
+           				}
+           			}
+
+           }
+   return 0;
+       };
+    
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,254 @@
+ <html>
+ 
+<head>
+	<title>STATE INSTITUTE OF EDUCATION</title>
+	<link href="style/style.css" rel="stylesheet" type="text/css" media="all">
+<script>
+
+var form1=new Array("name_cswn","mother_name",
+					"dob","address","disability",
+					"d_cat","percent_d","e_cat",
+					"father_name","gender",
+					"sub_cat","district_name",
+					"p_reason","class",
+					"religion","m_tongue",
+					 "s_cat");
+var dob=new Array("date","month","year");
+var data1=new Array();
+
+var i=0;
+function validate(form){
+var count=validateForm(form);	
+if(count<1){
+    alert("Form is Valid");
+   return true;
+}else{
+ 
+ var a=document.getElementById(form1[count-1]);
+ var div=document.getElementById('error');
+ a.style.backgroundColor="#0277BD";
+    a.style.color="#fff";
+    a.style.borderRadius="3px";
+    a.focus();
+    if(count==7){
+            div.style.visibility="visible";
+    	  div.innerHTML="THIS FEILD TAKES ONLY NUMBER AND MUST BE MORE THAN 50 PERCENT";
+    }
+
+    return false;
+}
+};
+
+</script>
+
+
+
+
+ 
+
+</head>
+<body onload="next()">
+	<div class="top"><div class="logo"><img src="images/logo.png"/></div><div class="lable"><div class="up">Directorat Of Education Andaman And Nicobar</div>State  Institute  Of  Education</div></div>
+    <div class="menu"><div class="nav">
+        <ul>
+            <li ><a href="index.php">Home</a></li>
+            <li ><a href="report.html">Report</a></li> 
+            <li ><a href="student.html">Students</a></li>
+            <li ><a href="about.html">About</a></li>
+                    </ul></div></div>
+	<div class="main_head"><div class="head"><div class="in_head" id="in_1">PERSONAL INFORMATION</div><div class="in_head" id="in_2"><a href="form2.html">BASIC INFORMATION</a></div><div class="in_head" id="in_3"><a href="form3.html">BANK INFORMATION</a></div></div></div>
+<br>
+<div class="contain">
+	<form action="php/check1.php" method="post" onSubmit="return validate(this)">
+	<div class="form_div">
+		<div class="div1">
+        Name of CSWN<input type="text" name="name_cswn" id="name_cswn" /><br><br>
+		Mother name<input type="text" name="mother_name" id="mother_name"/><br><br>
+		
+            
+ Date of Birth<div class="select_date" id="dob"> 
+       Date<select name="date" size="1" id="date">
+    <option value='1'>1</option>
+    <option value='1'>1</option>
+    <option value='2'>2</option>
+    <option value='3'>3</option>
+    <option value='4'>4</option>
+    <option value='5'>5</option>
+    <option value='6'>6</option>
+    <option value='7'>7</option>
+    <option value='8'>8</option>
+    <option value='9'>9</option>
+    <option value='10'>10</option>
+    <option value='11'>11</option>
+    <option value='12'>12</option>
+    <option value='13'>13</option>
+    <option value='14'>14</option>
+    <option value='15'>15</option>
+    <option value='16'>16</option>
+    <option value='17'>17</option>
+    <option value='18'>18</option>
+    <option value='19'>19</option>
+    <option value='20'>20</option>
+    <option value='21'>21</option>
+    <option value='22'>22</option>
+    <option value='23'>23</option>
+    <option value='24'>24</option>
+    <option value='25'>25</option>
+    <option value='26'>26</option>
+    <option value='27'>27</option>
+    <option value='28'>28</option>
+    <option value='29'>29</option>
+    <option value='30'>30</option>
+    <option value='31'>31</option>
+</select>
+Month<select name="month" size="1" id="month">
+<option value="1">january</option>
+<option value="2">feburary</option>
+<option value="3">march</option>
+<option value="4">april</option>
+<option value="5">may</option>
+    <option value="6">june</option>
+    <option value="7">july</option>
+    <option value="8">august</option>
+    <option value="9">september</option>
+    <option value="10">october</option>
+    <option value="11">november</option>
+    <option value="12">december</option>
+</select>
+Year<input type="tel" name="year" id="year" style="width:70px;margin-left:10px;float:none;" maxlength="4"/>
+       
+    </div>
+<input type="hidden" name="dob" id="dob2" value=""/>
+<br><br></br>
+                
+		Address<textarea rows="2" name="address"  id="address"/></textarea><br></br></br>
+		Disability <input type="text" name="disability" id="disability"/><br><br>
+		Disability Certificate Obtain<div class="radio" id="d_cat"> 
+			YES <input type="radio" class="rad" name="d_cat" id="d_cat" value="yes"/>	
+			NO <input type="radio" class="rad" name="d_cat" id="d_cat" value="no"/>
+		</div><br><br>
+		Percent of Disability<input type="text" name="percent_d" id="percent_d" maxlength="2"/><br><br>
+		Economic Category<div class="radio" id="e_cat"> 
+			BPL<input type="radio" class="rad" name="e_cat" id="e_cat" value="bpl"/>	
+			APL<input type="radio" class="rad" name="e_cat"  id="e_cat" value="apl"/>
+		</div><br><br>
+        
+	</div>
+	
+
+	<div class="div2">
+		Father name<input type="text" name="father_name" id="father_name"/><br><br>
+		Gender<div class="radio" id="gender"> 
+			Boy <input type="radio" class="rad" name="gender" id="gender" value="boy"/>	
+			Girl <input type="radio" class="rad" name="gender" id="gender" value="girl"/></div><br><br>
+			SUB category<input type="text" name="sub_cat" id="sub_cat"/><br><br>
+			Name of District<input type="text" name="district_name" id="district_name"/><br><br>
+		Possible Reason<div class="radio" id="p_reason" style="width:450px"> 
+			CONGINITAL<input type="radio" class="rad" name="p_reason" id="p_reason" value="conginital"/>
+			ACCIDENTAL<input type="radio" class="rad" name="p_reason" id="p_reason" value="accidental"/>
+			ACQUIRED<input type="radio" class="rad" name="p_reason" id="p_reason"value="acquired"/></div><br><br>
+		Class<input type="text" name="class" id="class"/><br><br>
+		Religion<input type="text" name="religion" id="religion"/><br><br>
+		Mother tongue<input type="text" name="m_tongue" id="m_tongue"/><br><br>
+		Social category<div class="radio" id="s_cat" style="width:450px"> 
+			ST<input type="radio" class="rad" name="s_cat" id="s_cat" value="st"/>	
+			SC<input type="radio" class="rad" name="s_cat" id="s_cat" value="sc"/>
+			OBC<input type="radio" class="rad" name="s_cat" id="s_cat" value="obc"/>
+			GENERAL<input type="radio" class="rad" name="s_cat" id="s_cat" value="general"/>
+			OTHERS<input type="radio" class="rad" name="s_cat" id="s_cat" value="others"/>
+		</div>
+		
+	</div>
+	
+</div>
+    <button class="next" id="next1">NEXT</button>
+</form>
+  </div> 
+<div class="error" id="error" style="width:700px;"></div>
+  <script type="text/javascript">
+
+       
+
+var tab1=document.getElementById('in_1');
+var tab2=document.getElementById('in_2');
+var tab3=document.getElementById('in_3');
+
+tab1.className="in_head_change";
+    var next=function(){
+    tab1.className="in_head_change";
+      };
+
+
+	
+function validateForm(form) {
+        var count=0;
+        for(var i=0;i<form1.length;i++){
+        var a=document.getElementById(form1[i]).value;
+            if(a==""){
+                count=i+1;
+                break;
+            }
+            if(i==6){
+             if(isNaN(a)){count=i+1;}else{
+                 if(a<50){count=i+1;}
+             }
+                
+            }
+            
+
+        }
+        var date1=document.getElementById("dob2");
+        var string="";
+        for(var i=0;i<dob.length;i++){
+        	var d=document.getElementById(dob[i]).value;
+        	if(d==""){
+                count=3;
+                break;
+            }if(i==2){
+             if(isNaN(d)){count=3;}   
+            }
+          if(i<2){
+            string=string+d+"-";}else{string=string+d;}
+		}
+              date1.value=string;
+              
+
+        if(count<1){
+        count=radiovalidate(form);
+    }
+           return count;     };
+
+
+
+
+           function radiovalidate(form){
+           	var radio1=new Array("d_cat","gender","s_cat","e_cat","p_reason");
+           	if((form.d_cat[0].checked ==false)&&(form.d_cat[1].checked ==false)){
+           		return 6;	}
+           		else{
+
+           		if((form.e_cat[0].checked ==false)&&(form.e_cat[1].checked ==false)){
+           			return 8;	}
+           			else{
+           		if((form.gender[0].checked ==false)&&(form.gender[1].checked ==false)){
+           				return 10;	}
+           						else{
+					if((form.p_reason[0].checked ==false)&&(form.p_reason[1].checked ==false)&&(form.p_reason[2].checked ==false)){
+           					return 13;	}
+           				else{
+if((form.s_cat[0].checked ==false)&&(form.s_cat[1].checked ==false)&&(form.s_cat[2].checked ==false)&&(form.s_cat[3].checked ==false)&&(form.s_cat[4].checked ==false))	{
+	return 17;
+}
+           				}
+           				}
+           			}
+
+           }
+   return 0;
+       };
+
+
+
+   </script> 
+</body>
+</html>
